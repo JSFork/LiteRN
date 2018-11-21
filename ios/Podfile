@@ -1,0 +1,24 @@
+platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+def rn_pods
+    pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+    pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'CxxBridge',
+    'RCTActionSheet',
+    'RCTGeolocation',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTPushNotification',
+    'RCTSettings',
+    'RCTText',
+    'RCTWebSocket',
+    'RCTLinkingIOS',
+    ]
+end
+
+target 'LiteRN' do
+    rn_pods
+end
